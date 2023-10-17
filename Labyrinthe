@@ -1,0 +1,33 @@
+import numpy as np
+
+Labyrinthe = np.loadtxt('Laby.txt')
+Direction = [(0,1), (1,0), (0,-1),(-1,0)]
+a = (Labyrinthe.shape[0]-1, Labyrinthe.shape[1]-1)
+trouve = False
+
+e = (0,0)
+Labyrinthe[e[0], e[1]] = 1
+
+def acceptable(e, d):
+    px = e[0] + d[0]
+    py = e[1] + d[1]
+    if px >= Labyrinthe.shape[0] or py >= Labyrinthe.shape[1] or px < 0 or py <0 :
+        return False
+    if Labyrinthe.shape[px, py] == -1 or Labyrinthe.shape[px, py] == 1 :
+        return False
+    return True
+
+def chercher(a, e) :
+    global trouve
+    if a[0]==e[0] and a[1]==e[1] :
+        trouve = True; return
+    for d in Direction :
+        if acceptable(e, d) :
+            ne = (e[0]+d[0], e[1]+d[1])
+            Labyrinthe[ne[0], ne[1]] = 1
+            chercher(a, ne)
+            if trouve :
+                return
+            Labyrinthe[ne[0], ne[1]] = 0
+
+chercher(a,e)

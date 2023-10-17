@@ -1,0 +1,38 @@
+def CalculSomme(n):
+    if n==0 : return 0
+    return n + CalculSomme(n-1)
+
+print(CalculSomme(3))
+
+def TestZero(n, position):
+    if n==0 :
+        return True, position
+    if n<10 :
+        return False
+    if n%10==0:
+        return True, position
+    return TestZero(n//10, position+1)
+
+print(TestZero(1230456, 0))
+
+def fct(n):
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    return fct(n-1)+fct(n-2)
+
+def liste(n):
+    fib=[]
+    for i in range(n+1):
+        fib.append(fct(i))
+    return fib
+print(liste(8))
+
+def puissance(x, n):
+    if n==0:
+        return 1
+    return x*puissance(x,n-1)
+    
+for i in range(10):
+    print(puissance(2,i))

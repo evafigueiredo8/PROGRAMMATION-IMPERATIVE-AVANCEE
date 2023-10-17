@@ -1,0 +1,15 @@
+T1 = [3,2,1]
+T2 = []
+T3 = []
+
+def Hanoi(n,TA,TB,TC,NomA,NomB,NomC):
+    if n==1:
+        TB.append(TA[-1])
+        del TA[-1]
+        print("Déplacer {} de {} vers {}".format(TB[-1], NomA, NomB))
+    else:
+        Hanoi(n-1, TA, TC, TB, NomA, NomC, NomB)
+        Hanoi(1, TA, TB, TC, NomA, NomB, NomC)
+        Hanoi(n-1, TC, TB, TA, NomC, NomB, NomA)
+
+Hanoi(len(T1), T1, T2, T3, "T1", "T2", "T3")
