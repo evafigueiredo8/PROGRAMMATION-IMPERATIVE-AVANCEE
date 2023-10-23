@@ -1,0 +1,60 @@
+import numpy as np
+import random as rd
+import math
+import itertools as it
+import copy
+
+
+"""valeurs = []
+L = list(range(1,11)) *2 + [25,50,75,100]
+for i in range(6):
+    V = rd.choice(L)
+    valeurs.append(V)
+    L.remove(V)
+resultat = rd.randint(101,1000)"""
+
+valeurs = [9,7,3,8,100,50]
+resultat = 604
+op = ['*' , '+', '-', '/']
+operations=[]
+trouve = False
+
+def acceptable(n1, n2):
+    global op
+    list_op = []
+    if n1>=n2:
+        list_op.append('+')
+        list_op.append('*')
+    if n1 != n2:
+        list_op.append('-')
+    if n1%n2 == 0:
+        list_op.append('/')
+    return list_op
+
+def calcul(n1,n2,op):
+    if op == '+': return n1+n2
+    if op == '-': return n1-n2
+    if op == '*': return n1*n2
+    return n1/n2
+
+def leCompteEstBon(valeurs):
+    global operations, op, trouve, resultat
+    if resultat in valeurs:
+        trouve = True
+        return
+    if len(valeurs ) == 1:
+        return
+    for n1, n2 in it.permutations(valeurs,2):
+        for op in acceptable(n1,n2):
+            r = calcul(n1,n2,op)
+            liste = copy.deepcopy(valeurs)
+            liste.remove(n1)
+            liste.remove(n2)
+            liste.append(r)
+            operations.append('{} {} {} = {}'.format(n1,op,n2,r))
+            leCompteEstBon(liste)
+            if trouve:
+                return
+            del operations[-1]
+
+leCompteEstBon(valeurs)
