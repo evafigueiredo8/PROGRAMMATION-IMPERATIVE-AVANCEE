@@ -1,0 +1,22 @@
+Portugal Espagne Andorre France Belgique Pays-Bas	­Luxembourg Allemagne Suisse Monaco Italie  Pologne Czechi	Slovaquie Autriche Hongrie Slovenie Croatie Bosnie Yougoslavie Roumanie
+Portugal	Espagne
+Espagne	Portugal	Andorre France
+Andorre	Espagne	France
+France	Espagne	Andorre	Belgique		Luxembourg	Allemagne	Suisse	Monaco	Italie
+Belgique	France	Pays-Bas	Luxembourg	Allemagne
+Pays-Bas	Belgique	Allemagne
+Luxembourg	France	Belgique	Allemagne
+Allemagne	France	Belgique	Pays-Bas	Luxembourg	Suisse	Pologne	Czechi	Autriche
+Suisse	France	Allemagne	Italie	Autriche
+Monaco	France
+Italie	France	Suisse	Autriche	Slovenie
+Pologne	Allemagne	Czechi	Slovaquie
+Czechi	Allemagne	Pologne	Slovaquie	Autriche	
+Slovaquie	Pologne	Czechi	Autriche	Hongrie
+Autriche	Allemagne	Suisse	Italie	Czechi	Slovaquie	Hongrie	Slovenie
+Hongrie	Slovaquie	Autriche	Slovenie	Croatie	Yougoslavie	Roumanie
+Slovenie	Italie	Autriche	Hongrie	Croatie
+Croatie	Hongrie	Slovenie	Bosnie	Yougoslavie
+Bosnie	Croatie	Yougoslavie
+Yougoslavie	Croatie	Bosnie	Hongrie	Roumanie
+Roumanie	Hongrie	Yougoslavie

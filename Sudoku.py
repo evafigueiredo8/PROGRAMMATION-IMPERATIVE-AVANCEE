@@ -22,7 +22,7 @@ def bloc(Mat, l, c):
     return L
 
 def conflits(Mat, l, c):
-    return set([x for x in sudoku[l,:] if x>0] + colonne(Mat, c) + bloc(Mat,l,c))
+    return set(ligne(Mat, l) + colonne(Mat, c) + bloc(Mat,l,c))
 
 def fill_sudoku(num):
     global sudoku, cases, trouve
